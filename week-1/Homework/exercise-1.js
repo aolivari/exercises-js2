@@ -26,6 +26,8 @@ let parkAvenueHouse = {
   },
 };
 
+
+
 /*
   DO NOT EDIT ANYTHING ABOVE THIS LINE
 
@@ -33,13 +35,31 @@ let parkAvenueHouse = {
 */
 
 // returns the full name (first name + last name) of the owner of the house
-function getOwnerFullName(house) {}
+function getOwnerFullName(house) {
+  let name = house.currentOwner
+  return `${name.firstName} ${name.lastName}`
+}
+
+
 
 // returns an array of the owners' email addresses of the two houses
-function getEmailAddresses(house1, house2) {}
+function getEmailAddresses(house1, house2) {
+  let mail1 = house1.currentOwner.email
+  let mail2 = house2.currentOwner.email
+  return `${mail1} , ${mail2}`
+}
 
 // returns the address for the cheapest house out of the two
-function getCheapestAddress(house1, house2) {}
+function getCheapestAddress(house1, house2) {
+  let pricehouses = [house1.price,house2.price]
+  let adresshouses =[house1.address,house2.address]
+  let print = pricehouses.slice().sort()
+  let index = pricehouses.indexOf(print[0])
+ 
+  return adresshouses[index]  
+
+
+}
 
 /*
   DO NOT EDIT ANYTHING BELOW THIS LINE
