@@ -16,14 +16,34 @@ let coffeeMachine = {
       flatWhite: 3.0,
     },
     insertedAmount: 0,
-    insertMoney: function (amount) {},
-    getCoffee: function (coffee) {},
-  };
-  
+    insertMoney: function (amount) {
+      this.insertedAmount=amount
+     
+    },
+    getCoffee: function (coffee) {
+       message1 = `please take your ${coffee}`
+       message2 = `Sorry you don't have enough money for a ${coffee}`
+      if (coffee === "cappuccino" && this.insertedAmount>=2.4){
+        return message1
+      }
+      if (coffee === "blackCoffee" && this.insertedAmount>=1.5){
+        return message1
+      }
+      if (coffee === "flatWhite" && this.insertedAmount>=3.0){
+        return message1
+      }
+      else return message2
+    }
+
+  } 
+ 
   /*
   DO NOT EDIT ANYTHING BELOW THIS LINE
   */
+ 
   
+  
+
   coffeeMachine.insertMoney(2.4);
   console.log(
     `Expected result: 'Please take your cappuccino'. Actual result: ${coffeeMachine.getCoffee(
@@ -51,3 +71,5 @@ let coffeeMachine = {
       "flatWhite"
     )}`
   );
+
+  //completed

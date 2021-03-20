@@ -21,11 +21,11 @@ let restaurant1 = {
     address: {
       city: "Glasgow",
       area: "center",
-    },
+},
     menu: ["pizza", "calzone", "salad"],
   };
   
-  let restaurant2 = {
+let restaurant2 = {
     name: "Ubiquitous Chip",
     totalSeats: 20,
     numberOfCustomers: 10,
@@ -34,9 +34,9 @@ let restaurant1 = {
       area: "west",
     },
     menu: ["salad", "chocolate cake", "roast lamb"],
-  };
+};
   
-  let restaurant3 = {
+let restaurant3 = {
     name: "Monkeyz",
     totalSeats: 15,
     numberOfCustomers: 8,
@@ -45,22 +45,33 @@ let restaurant1 = {
       area: "center",
     },
     menu: ["stew", "chocolate cake", "panini"],
-  };
+};
   
-  let restaurants = [restaurant1, restaurant2, restaurant3];
+let restaurants = [restaurant1, restaurant2, restaurant3];
   
-  /*
-  DO NOT EDIT ANYTHING ABOVE THIS LINE
-  WRITE YOUR CODE BELOW
-  */
+/*
+DO NOT EDIT ANYTHING ABOVE THIS LINE
+WRITE YOUR CODE BELOW
+*/
   
+
+
   let restaurantFinderApplication = {
     applicationName: "Restaurant Finder",
     applicationVersion: "1.0",
     restaurants: restaurants,
+
     findAvailableRestaurants: function (numberOfPeople) {
-      // Complete here
+      let realseats1 = restaurants[0].totalSeats-restaurants[0].numberOfCustomers-numberOfPeople
+      let realseats2 = restaurants[1].totalSeats-restaurants[1].numberOfCustomers-numberOfPeople
+      let realseats3 = restaurants[2].totalSeats-restaurants[2].numberOfCustomers-numberOfPeople
+
+
+        return  restaurants[0].name
+    }
     },
+
+
     findRestaurantServingDish: function (dishName) {
       // Complete here
     },
@@ -69,6 +80,7 @@ let restaurant1 = {
     },
   };
   
+  console.log(restaurantFinderApplication.findAvailableRestaurants(13))
   /*
   DO NOT EDIT ANYTHING BELOW THIS LINE
   */
