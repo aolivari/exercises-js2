@@ -51,13 +51,9 @@ function getEmailAddresses(house1, house2) {
 
 // returns the address for the cheapest house out of the two
 function getCheapestAddress(house1, house2) {
-  let pricehouses = [house1.price,house2.price]
-  let adresshouses =[house1.address,house2.address]
-  let print = pricehouses.slice().sort()
-  let index = pricehouses.indexOf(print[0])
- 
-  return adresshouses[index]  
-
+ if (house1.price>house2.price) 
+  
+  return house2.address 
 
 }
 

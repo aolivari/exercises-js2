@@ -23,16 +23,11 @@ let coffeeMachine = {
     getCoffee: function (coffee) {
        message1 = `please take your ${coffee}`
        message2 = `Sorry you don't have enough money for a ${coffee}`
-      if (coffee === "cappuccino" && this.insertedAmount>=2.4){
+       
+      if (this.insertedAmount>=this.prices[coffee]){
         return message1
       }
-      if (coffee === "blackCoffee" && this.insertedAmount>=1.5){
-        return message1
-      }
-      if (coffee === "flatWhite" && this.insertedAmount>=3.0){
-        return message1
-      }
-      else return message2
+    else return message2
     }
 
   } 
