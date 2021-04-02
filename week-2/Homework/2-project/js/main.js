@@ -29,7 +29,7 @@ btnBlue.addEventListener('click', () => cambiameeltemita(btnBlue, tema[0]));
 btnOrange.addEventListener('click', () => cambiameeltemita(btnOrange, tema[1]));
 btnGreen.addEventListener('click', (busc) => cambiameeltemita(busc.target, tema[2]));
 
-// [btnBlue,btnGreen,btnOrange] = btn.addEventListener('click', () => cambiameeltemita(btnBlue, tema[0]));
+[btnBlue,btnGreen,btnOrange] = btn.addEventListener('click', () => cambiameeltemita(btnBlue, tema[0]));
 
 /****************************************************************************************************/
 
@@ -44,7 +44,30 @@ btnGreen.addEventListener('click', (busc) => cambiameeltemita(busc.target, tema[
 
 
 
-btnPressed.onclick = (event)=>{
-    event.preventDefault()
-Element.style.backgroundColor ="white"
+function validateFields(event) {
+  event.preventDefault();
+  let isValid = true;
+  let arrayOfFields = [emailField, yourNameField, describeYourselfField]
+  //Limpiar todos los background color de los campos.
+  arrayOfFields.forEach(field => field.style.backgroundColor = 'white')
+  //Validar condiciones de los campos.
+  if (!(emailField.value.length > 0 && emailField.value.includes('@'))) {
+    emailField.style.backgroundColor = 'tomato';
+    isValid = false;
+  }
+  if(!yourNameField.value.length > 0) {
+    yourNameField.style.backgroundColor = 'tomato';
+    isValid = false;
+  }
+  if(!describeYourselfField.value.length > 0) {
+    describeYourselfField.style.backgroundColor = 'tomato';
+    isValid = false;
+  }
+ //Verifica que todos los campos cumplen las condiciones 
+ if(isValid) {
+   alert('thank you for filling out the form');
+   arrayOfFields.forEach(field => field.value = " ");
+ }
 }
+
+submitBtn.addEventListener('click', validateFields);
