@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Slideshow</title>
-    <script src="slideshow.js"></script>
+    
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -11,7 +11,27 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <!-- Write your HTML in here -->
+  <body id="body">
+    
+  
+    <div id="title">
+      <h1 class="text-center display-1 ">Un carrusel de imágenes</h1>
+    </div>
+    <div class="text-center">
+      <img id="img" src="./fotos/toño (1).jpg" class="rounded img-thumbnail" width="1200px">
+      <p id="nombre">Name of the photo</p>
+    </div>
+
+    <div class="m-0 row justify-content-center">
+      <button id="autoback"   type="button" class="btn btn-outline-primary">Auto-Back</button>
+      <button id="back"       type="button" class="btn btn-outline-secondary">Back</button>
+      <button id="stop"       type="button" class="btn btn-outline-danger">Stop</button>
+      <button id="forward"    type="button"  class="btn btn-outline-success">Forward</button>  
+      <button id="autoforward"type="button"class="btn btn-outline-info">Auto-Forward</button>
+    </div>
+    <script src="slideshow.js"></script>
   </body>
+  
+  
+
 </html>
